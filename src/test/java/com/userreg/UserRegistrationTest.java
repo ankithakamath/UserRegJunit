@@ -9,7 +9,7 @@ public class UserRegistrationTest {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validateFirstName("Panchami");
+			result = user.validateFirstName("Ankitha");
 			Assert.assertTrue(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -19,15 +19,14 @@ public class UserRegistrationTest {
 	}
 
 	/**
-	 * Test should pass because we are checking invalid first name that doesn't have
-	 * atleast 3 characters
+	 * Checking for first name
 	 */
 	@Test
-	public void firstname_short() {
+	public void firstname_Incomplete() {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validateFirstName("Pa");
+			result = user.validateFirstName("ak");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -36,16 +35,14 @@ public class UserRegistrationTest {
 	}
 
 	/**
-	 * Test should pass because we are checking invalid first name that doesn't
-	 * start with capital letter
-	 * 
+	*Checking for upper case
 	 */
 	@Test
-	public void firstname_withoutcapitalcharacter() {
+	public void firstname_withoutUpperCase() {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validateFirstName("panchami");
+			result = user.validateFirstName("ankitha");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -54,14 +51,14 @@ public class UserRegistrationTest {
 	}
 
 	/**
-	 * This test case should pass if we provide a valid last name
+	 * Checking for valid Lastname
 	 */
 	@Test
 	public void lastname_valid() {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validateLastName("Shenoy");
+			result = user.validateLastName("Kamath");
 			Assert.assertTrue(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -71,15 +68,14 @@ public class UserRegistrationTest {
 	}
 
 	/**
-	 * Test should pass because we are checking invalid last name that doesn't have
-	 * atleast 3 characters
+	 Checking for incomplete last name 
 	 */
 	@Test
-	public void lastname_short() {
+	public void lastname_Incomplete() {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validateLastName("Sh");
+			result = user.validateLastName("ak");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -89,15 +85,14 @@ public class UserRegistrationTest {
 	}
 
 	/**
-	 * Test should pass because we are checking invalid last name that doesn't start
-	 * with capital letter
+	Checking for Upper case
 	 */
 	@Test
 	public void lastname_withoutcapitalcharacter() {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validateLastName("shenoy");
+			result = user.validateLastName("ankitha");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -107,14 +102,14 @@ public class UserRegistrationTest {
 	}
 
 	/**
-	 * Test case pass if valid phone number is given
+	 * checking for valid phone number is given
 	 */
 	@Test
 	public void phone_valid() {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validatePhoneNumber("91 9110689660");
+			result = user.validatePhoneNumber("91 9741788898");
 			Assert.assertTrue(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -132,7 +127,7 @@ public class UserRegistrationTest {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validatePhoneNumber("91 91106896");
+			result = user.validatePhoneNumber("91 97417");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -150,7 +145,7 @@ public class UserRegistrationTest {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validatePhoneNumber("91 0110689660");
+			result = user.validatePhoneNumber("91 0974178889");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -167,7 +162,7 @@ public class UserRegistrationTest {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validateEmail("panchamishenoy16@gmail.com");
+			result = user.validateEmail("Kamathankitha76@gmail.com");
 			Assert.assertTrue(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -184,7 +179,7 @@ public class UserRegistrationTest {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validateEmail("panchami.com");
+			result = user.validateEmail("ankitha@.com");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -201,7 +196,7 @@ public class UserRegistrationTest {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validatePassword("P1@abcdefhg");
+			result = user.validatePassword("abcdefG/1");
 			Assert.assertTrue(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -219,7 +214,7 @@ public class UserRegistrationTest {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validatePassword("p1@abcdefgh");
+			result = user.validatePassword("abcdefg/1");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -236,7 +231,7 @@ public class UserRegistrationTest {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validatePassword("P@abcdefghi");
+			result = user.validatePassword("abcdefG/");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
@@ -247,14 +242,14 @@ public class UserRegistrationTest {
 
 	/**
 	 * Test case will pass as we are checking for invalid password without special
-	 * character
+	
 	 */
 	@Test
 	public void password_withoutspecialchar() {
 		UserRegistration user = new UserRegistration();
 		boolean result;
 		try {
-			result = user.validatePassword("Pabcdefgh1");
+			result = user.validatePassword("abcdefG1");
 			Assert.assertFalse(result);
 		} catch (InvalidUserException e) {
 			// TODO Auto-generated catch block
